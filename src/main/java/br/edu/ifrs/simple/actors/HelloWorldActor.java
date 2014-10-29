@@ -17,7 +17,7 @@ public class HelloWorldActor extends UntypedActor {
 
         LOGGER.info("hello world!");
 
-        this.getSender().tell(new HaltMessage(), this.getSender());
+        this.getSender().tell(new HaltMessage(), this.getSelf());
     }
 
 }
