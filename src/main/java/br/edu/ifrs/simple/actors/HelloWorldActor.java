@@ -1,6 +1,7 @@
 package br.edu.ifrs.simple.actors;
 
 import akka.actor.UntypedActor;
+import br.edu.ifrs.simple.messages.HaltMessage;
 import br.edu.ifrs.simple.messages.HelloWorldMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,7 @@ public class HelloWorldActor extends UntypedActor {
 
         LOGGER.info("hello world!");
 
-        this.getSender().tell("done!", this.getSelf());
+        this.getSender().tell(new HaltMessage(), this.getSender());
     }
 
 }
