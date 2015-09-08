@@ -38,9 +38,9 @@ public class AkkaHelloWorldApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String ... args) {
-        ActorRef helloWorldActor = actorSystem.actorOf(new Props(HelloWorldActor.class));
+        ActorRef helloWorldActor = actorSystem.actorOf(Props.create(HelloWorldActor.class));
 
-        helloWorldActor.tell(new HelloWorldMessage(),  actorSystem.actorOf(new Props(HaltingActor.class)));
+        helloWorldActor.tell(new HelloWorldMessage(),  actorSystem.actorOf(Props.create(HaltingActor.class)));
 	}
 
 	public static void main(String[] args) throws Exception {
