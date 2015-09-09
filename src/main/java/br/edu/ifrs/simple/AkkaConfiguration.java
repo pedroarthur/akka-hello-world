@@ -11,3 +11,4 @@ public class AkkaConfiguration {
         return ActorSystem.create("defaultActorSystem");
     }
 }
+
